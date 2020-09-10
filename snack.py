@@ -4,3 +4,6 @@ class Snack():
         self.description = ''
         self.price = 0.00
         self.image = 'default.png'
+    
+    def get_data(self):
+        return self.__dict__
