@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  name: mini-snacks
+  routes:
+    - route: mini-snacks.mybluemix.net
+  disk_quota: 1024M
+  buildpacks:
+    - python_buildpack
