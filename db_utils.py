@@ -14,8 +14,7 @@ def get_snack(id):
     return result
 
 def add_snack(data):
-    id = collection.insert_one(data)
-    return id
+    collection.insert_one(data)
 
 def edit_snack(id, data):
     result = collection.update_one({'_id': ObjectId(id)}, 
