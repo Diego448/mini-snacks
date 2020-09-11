@@ -6,6 +6,31 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
 </head>
 <body>
-
+    <form>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group col">
+                <label>Price</label>
+                <input type="number" class="form-control" placeholder="Price">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Ingredients</label>
+                <textarea class="form-control" rows="3" placeholder="Ingredients"></textarea>
+            </div>
+            <div class="form-group col">
+                <label>Description</label>
+                <textarea class="form-control" rows="3" placeholder="Description"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <input type="text">
+            <button>Choose file</button>
+        </div>
+    </form>
 </body>
 </html>
