@@ -27,5 +27,10 @@ def snacks_list():
     snacks = db_utils.get_all_snacks()
     return render_template('snack_list.html', content=lang.es_MX['snack_list'], snack_list=snacks)
 
+@app.route('/snacks/<id>')
+def snack_details(id):
+    snack = db_utils.get_snack(id)
+    return render_template('snack_details.html', snack_data=snack)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port, debug=True)
