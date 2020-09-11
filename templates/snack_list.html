@@ -23,6 +23,7 @@
                         <td>{{ snack['price'] }}</td>
                         <td>{{ snack['description'] }}</td>
                         <td>{{ snack['image'] }}</td>
+                        <td><img src="{{url_for('static', filename='images/' + snack['image'])}}" width="10"></td>
                         <td><a href="#">Edit</a><a href="#">Delete</a></td>
                     </tr>
                 {% endfor %}
