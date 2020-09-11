@@ -20,11 +20,12 @@ def add_snacks():
         new_snack.ingredients = request.form['ingredients'].split(',')
         new_snack.image = request.form['image']
         db_utils.add_snack(new_snack.get_data())
-        return new_snack.get_data()
+        return 'Snack added'
 
 @app.route('/snacks/all')
 def snacks_list():
-    return render_template('snack_list.html', content=lang.es_MX['snack_list'])
+    snacks = db_utils.get_all_snacks()
+    return render_template('snack_list.html', content=lang.es_MX['snack_list'], snack_list=snacks)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port, debug=True)

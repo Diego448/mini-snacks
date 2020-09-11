@@ -10,15 +10,22 @@
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Price</th>
                     <th>Description</th>
                     <th>Image</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                </tr>
+                {% for snack in snack_list %}
+                    <tr>
+                        <td>{{ snack['name'] }}</td>
+                        <td>{{ snack['price'] }}</td>
+                        <td>{{ snack['description'] }}</td>
+                        <td>{{ snack['image'] }}</td>
+                        <td><a href="#">Edit</a><a href="#">Delete</a></td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </body>
