@@ -4,6 +4,7 @@ from snack import Snack
 
 app = Flask(__name__, static_url_path='')
 port = int(os.getenv('PORT', 8000))
+current_lang = lang.es_MX
 
 @app.route('/')
 def homepage():
@@ -25,7 +26,7 @@ def add_snacks():
 @app.route('/snacks/all')
 def snacks_list():
     snacks = db_utils.get_all_snacks()
-    return render_template('snack_list.html', content=lang.es_MX['snack_list'], snack_list=snacks)
+    return render_template('snacks_list.html', content=current_lang['snacks_list'], snacks_list=snacks)
 
 @app.route('/snacks/<id>')
 def snack_details(id):
