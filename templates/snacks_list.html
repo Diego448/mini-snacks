@@ -6,25 +6,29 @@
     </head>
     <body>
         <h1>{{ content['title'] }}</h1>
+        <p>
+            <a href="{{ url_for('add_snacks') }}">+</a>
+        </p>
         <table>
             <thead>
                 <tr>
+                    <th>Image</th>
                     <th>Name</th>
                     <th>Price</th>
                     <th>Description</th>
-                    <th>Image</th>
-                    <th>Actions</th>
+                    <th colspan="2">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for snack in snacks_list %}
                     <tr>
+                        <td><img src="{{url_for('static', filename='images/' + snack['image'])}}" width="25"></td>
                         <td>{{ snack['name'] }}</td>
                         <td>{{ snack['price'] }}</td>
                         <td>{{ snack['description'] }}</td>
-                        <td>{{ snack['image'] }}</td>
-                        <td><img src="{{url_for('static', filename='images/' + snack['image'])}}" width="10"></td>
-                        <td><a href="#">Edit</a><a href="#">Delete</a></td>
+                        <td><a href="{{ url_for('snack_details', id=snack['_id'])|string }}">View</a></td>    
+                        <td><a href="#">Edit</a></td>
+                        <td><a href="#">Delete</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
