@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Status for {{ status['action'] }}</h1>
+        <h2>Status message</h2>
+        <p>{{status['message']}}</p>
+        <p><small>Action code: {{ status['code']}}</small></p>
+        <p>
+            <button>
+                <a href="{{ url_for('homepage') }}">Return to homepage</a>
+            </button>
+            <button>
+                <a href="{{ url_for('add_snacks') }}">Add another snack</a>
+            </button>
+            <button>
+                <a href="{{ url_for('snacks_list') }}">Return to snacks list</a>
+            </button>
+        </p>
+    </body>
+</html>

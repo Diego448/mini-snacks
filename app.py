@@ -21,7 +21,8 @@ def add_snacks():
         new_snack.ingredients = request.form['ingredients'].split(',')
         new_snack.image = request.form['image']
         db_utils.add_snack(new_snack.get_data())
-        return 'Snack added'
+        status = {'message': 'OK', 'action': 'Add snack', 'code': 200}
+        return render_template('action_feedback.html', status=status)
 
 @app.route('/snacks/all')
 def snacks_list():
