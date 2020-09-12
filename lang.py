@@ -2,7 +2,7 @@ es_MX = {
     "homepage": {
         "title": "Mini botanas"
         },
-    "snack_list": {
+    "snacks_list": {
         "title": "Lista de botanas"
     }
 }
