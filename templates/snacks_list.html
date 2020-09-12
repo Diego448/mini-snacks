@@ -2,12 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
         <title>{{ content['title'] }}</title>
     </head>
     <body>
         <h1>{{ content['title'] }}</h1>
         <p>
             <a href="{{ url_for('add_snacks') }}">+</a>
+            <a href="{{ url_for('homepage') }}">Back to homepage</a>
         </p>
         <table>
             <thead>
