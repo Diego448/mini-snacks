@@ -6,12 +6,12 @@ from snack import Snack
 app = Flask(__name__, static_url_path='')
 port = int(os.getenv('PORT', 8000))
 current_lang = lang.es_MX
-uploads_path = '/home/diego/Assets/'
-#Uploads path for Windows
-#uploads_path = 'C:\Users\'
+current_path = os.path.abspath(os.getcwd())
+uploads_path = os.path.join(str(current_path), 'static', 'images/')
 
 @app.route('/')
 def homepage():
+    print(uploads_path)
     return render_template('homepage.html')
 
 @app.route('/snacks/add', methods=['GET', 'POST'])
