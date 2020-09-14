@@ -11,7 +11,6 @@ uploads_path = os.path.join(str(current_path), 'static', 'images/')
 
 @app.route('/')
 def homepage():
-    print(uploads_path)
     return render_template('homepage.html')
 
 @app.route('/snacks/add', methods=['GET', 'POST'])
