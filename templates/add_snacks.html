@@ -2,35 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Snacks</title>
+    <title>Add snack</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
 </head>
 <body>
-    <form method="POST" enctype="multipart/form-data">
-        <div class="form-row">
-            <div class="form-group col">
-                <label>Name</label>
-                <input type="text" class="form-control" placeholder="Name" id="name" name="name">
-            </div>
-            <div class="form-group col">
-                <label>Price</label>
-                <input type="number" class="form-control" placeholder="Price" id="price" name="price">
-            </div>
+    <header class="mb-5">
+        <h1 class="h1 text-center">Add snack</h1>
+    </header>
+    <form method="POST" enctype="multipart/form-data" class="px-5 mx-5">
+        <div class="form-group row justify-content-center">
+            <label class="col-form-label col-1">Name</label>
+            <input type="text" class="form-control col-5" placeholder="Name" id="name" name="name">
         </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <label>Ingredients</label>
-                <textarea class="form-control" rows="3" placeholder="Ingredients" id="ingredients" name="ingredients"></textarea>
-            </div>
-            <div class="form-group col">
-                <label>Description</label>
-                <textarea class="form-control" rows="3" placeholder="Description" id="description" name="description"></textarea>
-            </div>
+        <div class="form-group row justify-content-center">
+            <label class="col-form-label col-1">Price</label>
+            <input type="number" class="form-control col-5" placeholder="Price" id="price" name="price" step="0.5">
         </div>
-        <div class="form-row">
-            <input type="file" accept="image/png, image/jpeg" id="image" name="image">
+        <div class="form-group row justify-content-center">
+            <label class="col-form-label col-1">Ingredients</label>
+            <textarea class="form-control col-5" rows="3" placeholder="Ingredients" id="ingredients" name="ingredients"></textarea>
         </div>
-        <button type="submit">Save</button>
+        <div class="form-group row justify-content-center">
+            <label class="col-form-label col-1">Description</label>
+            <textarea class="form-control col-5" rows="3" placeholder="Description" id="description" name="description"></textarea>
+        </div> 
+        <div class="form-group row justify-content-center">
+            <label for="image" class="col-form-label col-1">Photo</label>
+            <input type="file" accept="image/png, image/jpeg" id="image" name="image" class="form-control-file col-4 pl-0">
+            <button type="submit" class="btn btn-primary col-1">Save</button>
+        </div> 
     </form>
 </body>
 </html>
