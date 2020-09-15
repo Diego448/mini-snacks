@@ -6,28 +6,28 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
 </head>
 <body class="container">
-    <header>
-        <h1 class="h1 text-center">Welcome to the homepage</h1>
+    <header class="py-3">
+        <h1 class="h1 text-center">Mini snacks</h1>
     </header>
-    <div class="card-deck">
-        <div class="card" >
-            <img src="{{ url_for('static', filename='images/default.png') }}" class="card-img-top"/>
+    <div class="card-deck mx-5 px-5 pb-3">
+        <div class="card text-center" >
+            <img src="{{ url_for('static', filename='images/default_mini_logo_bg.png') }}" class="card-img-top"/>
             <div class="card-body">
-                <h5 class="h2">Snacks</h5>
+                <h5 class="h5">Snacks</h5>
                 <p class="card-text">Meet our snacks</p>
                 <a href="{{ url_for('snacks_list') }}" class="btn btn-primary">Snacks</a>
             </div>
         </div>
-        <div class="card">
-            <img src="{{ url_for('static', filename='images/default.png') }}" class="card-img-top"/>
+        <div class="card text-center">
+            <img src="{{ url_for('static', filename='images/default_mini_logo_bg.png') }}" class="card-img-top"/>
             <div class="card-body">
-                <h5 class="h2">Inventory</h5>
+                <h5 class="h5">Inventory</h5>
                 <p class="card-text">Products stock listing</p>
                 <a href="{{ url_for('snacks_list') }}" class="btn btn-primary">Snacks</a>
             </div>
         </div>
-        <div class="card">
-            <img src="{{ url_for('static', filename='images/default.png') }}" class="card-img-top"/>
+        <div class="card text-center">
+            <img src="{{ url_for('static', filename='images/default_mini_logo_bg.png') }}" class="card-img-top"/>
             <div class="card-body">
                 <h5 class="h5">Sales</h5>
                 <p class="card-text">Our sales</p>
@@ -35,15 +35,15 @@
             </div>
         </div>
     </div>
-    <footer class="bg-dark text-white">
-        <p>Mini-botanas</p>
-        <address>
-            <p>Montaña #1131, Jardines de Tepa</p>
-            <p>
-                <a href="tel:3781111111">Phone: 3781111111</a>
+    <footer class="bg-secondary text-white pl-4 py-3">
+        <p class="h6 mb-0">Mini-botanas</p>
+        <address class="mb-0">
+            <p class="mb-0">Montaña #1131, Jardines de Tepa</p>
+            <p class="mb-0">
+                <a href="tel:3781111111" class="text-decoration-none text-white">Phone: 3781111111</a>
             </p>
         </address>
-        <p>Open from 5:00 pm to 9:00 pm</p>
+        <p class="mb-0"><small>Open from 5:00 pm to 9:00 pm</small></p>
     </footer>
 </body>
 </html>
