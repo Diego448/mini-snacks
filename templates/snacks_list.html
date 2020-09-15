@@ -6,6 +6,7 @@
         <title>{{ content['title'] }}</title>
     </head>
     <body>
+        <nav></nav>
         <h1>{{ content['title'] }}</h1>
         <p>
             <a href="{{ url_for('add_snacks') }}">+</a>
@@ -29,8 +30,8 @@
                         <td>{{ snack['price'] }}</td>
                         <td>{{ snack['description'] }}</td>
                         <td><a href="{{ url_for('snack_details', id=snack['_id'])|string }}"><img src="{{url_for('static', filename='icons/eye-fill.svg')}}"></a></td>    
-                        <td><a href="#">Edit</a></td>
-                        <td><a href="#">Delete</a></td>
+                        <td><a href="#"><img src="{{url_for('static', filename='icons/pencil.svg')}}"></a></td>
+                        <td><a href="#"><img src="{{url_for('static', filename='icons/trash.svg')}}"></a></td>
                     </tr>
                 {% endfor %}
             </tbody>
