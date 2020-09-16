@@ -7,15 +7,15 @@
 </head>
 <body class="container">
     <header class="py-3 bg-light mx-5">
-        <h1 class="h1 text-center font-italic">Mini botanas</h1>
+        <h1 class="h1 text-center font-italic">{{ content['title'] }}</h1>
     </header>
     <div class="card-deck mx-5 px-5 pb-5 bg-light">
         <div class="card text-center" >
             <img src="{{ url_for('static', filename='images/default_mini_logo_bg.png') }}" class="card-img-top"/>
             <div class="card-body">
-                <h5 class="h5">Snacks</h5>
-                <p class="card-text">Meet our snacks</p>
-                <a href="{{ url_for('snacks_list') }}" class="btn btn-primary">Snacks</a>
+                <h5 class="h5">{{ content['card_1']['title'] }}</h5>
+                <p class="card-text">{{ content['card_1']['description'] }}</p>
+                <a href="{{ url_for('snacks_list') }}" class="btn btn-primary">{{ content['card_1']['button'] }}</a>
             </div>
         </div>
         <div class="card text-center">
@@ -35,15 +35,14 @@
             </div>
         </div>
     </div>
-    <footer class="bg-secondary text-white pl-4 py-3 mx-5">
-        <p class="h6 mb-0">Mini-botanas</p>
+    <footer class="bg-secondary text-white pl-5 py-3 mx-5">
         <address class="mb-0">
-            <p class="mb-0">Montaña #1131, Jardines de Tepa</p>
-            <p class="mb-0">
-                <a href="tel:3781111111" class="text-decoration-none text-white">Phone: 3781111111</a>
+            <p class="mb-0 mb-n2"><small>Montaña #1131, Jardines de Tepa</small></p>
+            <p class="mb-0 mb-n2">
+                <a href="tel:3781111111" class="text-decoration-none text-white"><small>{{ content['footer']['phone_label'] }} 3781111111</small></a>
             </p>
         </address>
-        <p class="mb-0"><small>Open from 5:00 pm to 9:00 pm</small></p>
+        <p class="mb-0"><small>{{ content['footer']['schedule'] }}</small></p>
     </footer>
 </body>
 </html>
