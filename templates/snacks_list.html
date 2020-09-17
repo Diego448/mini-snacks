@@ -29,7 +29,7 @@
                         <td>{{ snack['name'] }}</td>
                         <td>{{ snack['price'] }}</td>
                         <td>{{ snack['description'] }}</td>
-                        <td><a href="{{ url_for('snack_details', id=snack['_id'])|string }}"><img src="{{url_for('static', filename='icons/eye-fill.svg')}}"></a></td>    
+                        <td><a href="{{ url_for('snack_details', id=snack['_id'])|string }}"><img src="{{ url_for('static', filename='icons/eye-fill.svg') }}"></a></td>    
                         <td><a href="#"><img src="{{ url_for('static', filename='icons/pencil.svg') }}"></a></td>
                         <td><a href="#"><img src="{{ url_for('static', filename='icons/trash.svg') }}"></a></td>
                     </tr>
