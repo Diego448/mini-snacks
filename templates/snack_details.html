@@ -6,10 +6,12 @@
         <title>{{ snack_data['name'] }}</title>
     </head>
     <body>
-        <h1>{{ snack_data['name'] }}</h1>
-        <img src="{{ url_for('static', filename='images/' + snack_data['image']) }}"></p>
-        {% for ingredients in snack_data['ingredients'] %}
-            <ul>{{ingredients}}</ul>
-        {% endfor %}
+        <div class="text-center">
+            <h1>{{ snack_data['name'] }}</h1>
+            <img class="position-relative" src="{{ url_for('static', filename='images/' + snack_data['image']) }}">
+            {% for ingredients in snack_data['ingredients'] %}
+                <ul>{{ingredients}}</ul>
+            {% endfor %}
+        </div>
     </body>
 </html>
