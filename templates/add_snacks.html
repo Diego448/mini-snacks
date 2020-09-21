@@ -17,11 +17,11 @@
     <form method="POST" enctype="multipart/form-data" class="px-5 mx-5">
         <div class="form-group row justify-content-center">
             <label class="col-form-label col-1">Name</label>
-            <input type="text" class="form-control col-5" placeholder="Name" id="name" name="name">
+            <input type="text" class="form-control col-5" placeholder="Name" id="name" name="name" value="{{ snack_data['name'] }}">
         </div>
         <div class="form-group row justify-content-center">
             <label class="col-form-label col-1">Price</label>
-            <input type="number" class="form-control col-5" placeholder="Price" id="price" name="price" step="0.5">
+            <input type="number" class="form-control col-5" placeholder="Price" id="price" name="price" step="0.5" value="{{ snack_data['price'] }}">
         </div>
         <div class="form-group row justify-content-center">
             <label class="col-form-label col-1">Ingredients</label>
@@ -29,7 +29,7 @@
         </div>
         <div class="form-group row justify-content-center">
             <label class="col-form-label col-1">Description</label>
-            <textarea class="form-control col-5" rows="3" placeholder="Description" id="description" name="description"></textarea>
+            <textarea class="form-control col-5" rows="3" placeholder="Description" id="description" name="description" >{{ snack_data['description'] }}</textarea>
         </div> 
         <div class="form-group row justify-content-center">
             <label for="image" class="col-form-label col-1">Photo</label>

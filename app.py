@@ -16,7 +16,7 @@ def homepage():
 @app.route('/snacks/add', methods=['GET', 'POST'])
 def add_snacks():
     if request.method == 'GET':
-        return render_template('add_snacks.html')
+        return render_template('add_snacks.html', snack_data={})
     elif request.method == 'POST':
         new_snack = Snack(request.form['name'])
         new_snack.description = request.form['description']
@@ -36,8 +36,24 @@ def snacks_list():
 
 @app.route('/snacks/<id>')
 def snack_details(id):
-    snack = db_utils.get_snack(id)
-    return render_template('snack_details.html', snack_data=snack)
+    snack_data = db_utils.get_snack(id)
+    return render_template('snack_details.html', snack_data=snack_data)
+
+@app.route('/snacks/<id>/edit', methods=['GET', 'POST'])
+def snack_edit(id):
+    if request.method == 'GET':
+        snack_data = db_utils.get_snack(id)
+        return render_template('add_snacks.html', snack_data=snack_data)
+    elif request.method == 'POST':
+        new_data = Snack(request.form['name'])
+        new_data.description = request.form['description']
+        new_data.price = request.form['price']
+        image_file = request.files['image']
+        new_data.image = image_file.filename
+        image_file.save(uploads_path + secure_filename(image_file.filename))
+        db_utils.edit_snack(id, new_data.get_data())
+        status = {'message': 'OK', 'action': 'Add snack', 'code': 200}
+        return render_template('action_feedback.html', status=status)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port, debug=True)
