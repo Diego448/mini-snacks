@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
         <title>{{ content['title'] }}</title>
     </head>
-    <body>
+    <body class="px-4">
         <nav>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
@@ -16,27 +16,27 @@
                 </li>
             </ul>
         </nav>
-        <h1>{{ content['title'] }}</h1>
+        <h1 class="h1 pl-3 pb-2">{{ content['title'] }}</h1>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th colspan="3">Actions</th>
+                    <th class="text-center">Image</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center" colspan="3">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for snack in snacks_list %}
                     <tr>
-                        <td><img src="{{ url_for('static', filename='images/' + snack['image']) }}" width="25"></td>
-                        <td>{{ snack['name'] }}</td>
-                        <td>{{ snack['price'] }}</td>
+                        <td class="text-center"><img src="{{ url_for('static', filename='images/' + snack['image']) }}" width="25"></td>
+                        <td class="text-center">{{ snack['name'] }}</td>
+                        <td class="text-center">{{ snack['price'] }}</td>
                         <td>{{ snack['description'] }}</td>
-                        <td><a href="{{ url_for('snack_details', id=snack['_id'])|string }}"><img src="{{ url_for('static', filename='icons/eye-fill.svg') }}"></a></td>    
-                        <td><a href="{{ url_for('snack_edit', id=snack['_id'])|string }}"><img src="{{ url_for('static', filename='icons/pencil.svg') }}"></a></td>
-                        <td><a href="#"><img src="{{ url_for('static', filename='icons/trash.svg') }}"></a></td>
+                        <td class="text-center"><a href="{{ url_for('snack_details', id=snack['_id'])|string }}"><img src="{{ url_for('static', filename='icons/eye-fill.svg') }}"></a></td>    
+                        <td class="text-center"><a href="{{ url_for('snack_edit', id=snack['_id'])|string }}"><img src="{{ url_for('static', filename='icons/pencil.svg') }}"></a></td>
+                        <td class="text-center"><a href="#"><img src="{{ url_for('static', filename='icons/trash.svg') }}"></a></td>
                     </tr>
                 {% endfor %}
             </tbody>
