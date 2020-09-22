@@ -5,13 +5,21 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
         <title>{{ snack_data['name'] }}</title>
     </head>
-    <body>
-        <div class="text-center p-3">
-            <h1>{{ snack_data['name'] }}</h1>
-            <img class="position-relative" src="{{ url_for('static', filename='images/' + snack_data['image']) }}">
-            {% for ingredients in snack_data['ingredients'] %}
-                <ul>{{ingredients}}</ul>
-            {% endfor %}
-        </div>
+    <body class="d-flex justify-content-center">
+        <div class="position-relative overflow-hidden text-center w-75" id="snack_banner" style="background-image:url('{{ url_for('static', filename='images/' + snack_data['image']) }}'); background-size: cover;">
+            <div class="col-5 p-5 mx-auto my-5">
+                <h1 class="h1">{{ snack_data['name'] }}</h1>
+                <p>{{ snack_data['description'] }}</p>
+                <h3 class="h3">${{ snack_data['price'] }}</h3>
+            </div>
+            <div class="col-5 p-5 mx-auto mt-5 bg-light">
+                <h5 class="h5">Ingredients</h5>
+                <ul class="text-left">
+                    {% for ingredients in snack_data['ingredients'] %}
+                        <li>{{ ingredients }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>  
     </body>
 </html>
