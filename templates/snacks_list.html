@@ -6,12 +6,17 @@
         <title>{{ content['title'] }}</title>
     </head>
     <body>
-        <nav></nav>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a href="{{ url_for('add_snacks') }}" class="nav-link">Add</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('homepage') }}" class="nav-link">Home</a>
+                </li>
+            </ul>
+        </nav>
         <h1>{{ content['title'] }}</h1>
-        <p>
-            <a href="{{ url_for('add_snacks') }}">+</a>
-            <a href="{{ url_for('homepage') }}">Back to homepage</a>
-        </p>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
