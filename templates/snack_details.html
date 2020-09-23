@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
-        <style>
-            {{ styles|safe }}
-        </style>
+        <!--<style>
+             styles|safe 
+        </style>-->
+        <link rel="stylesheet" href="{{ url_info }}{{ url_for('style_test', image=snack_data['image']|string) }}">
         <title>{{ snack_data['name'] }}</title>
     </head>
     <body class="">

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, Response
 from werkzeug.utils import secure_filename
 import lang, os, db_utils
 from snack import Snack
@@ -39,7 +39,7 @@ def snacks_list():
 def snack_details(id):
     snack_data = db_utils.get_snack(id)
     styles = create_styles(snack_data['image'])
-    return render_template('snack_details.html', snack_data=snack_data, styles=styles)
+    return render_template('snack_details.html', snack_data=snack_data, styles=styles, url_info=request.url_root)
 
 @app.route('/snacks/<id>/edit', methods=['GET', 'POST'])
 def snack_edit(id):
@@ -65,6 +65,17 @@ def create_styles(image_url):
         "background_size": "cover"
     }
     return template.render(values=values)
+
+@app.route('/test/styles/<image>')
+def style_test(image):
+    env = Environment(loader=FileSystemLoader('static'))
+    template = env.get_template('test.css')
+    values = {
+        "background_image_url": url_for('static', filename='images/' + image) ,
+        "background_size": "cover"
+    }
+    stylesheet = template.render(values=values)
+    return Response(stylesheet, mimetype="text/css")
 
 
 if __name__ == "__main__":
