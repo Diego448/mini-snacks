@@ -3,10 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+        <style>
+            {{ styles|safe }}
+        </style>
         <title>{{ snack_data['name'] }}</title>
     </head>
     <body class="">
-        <div class="position-relative text-center mx-5 px-5" id="snack_banner" style="background-image:url('{{ url_for('static', filename='images/' + snack_data['image']) }}'); background-size: cover;">
+        <div class="position-relative text-center mx-5 px-5" id="snack_banner" >
             <div class="col-5 p-5 mx-auto my-5">
                 <h1 class="h1">{{ snack_data['name'] }}</h1>
             </div>

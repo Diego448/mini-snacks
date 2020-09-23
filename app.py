@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for
 from werkzeug.utils import secure_filename
 import lang, os, db_utils
 from snack import Snack
+from jinja2 import Environment, FileSystemLoader
 
 app = Flask(__name__, static_url_path='')
 port = int(os.getenv('PORT', 8000))
@@ -37,7 +38,8 @@ def snacks_list():
 @app.route('/snacks/<id>')
 def snack_details(id):
     snack_data = db_utils.get_snack(id)
-    return render_template('snack_details.html', snack_data=snack_data)
+    styles = create_styles(snack_data['image'])
+    return render_template('snack_details.html', snack_data=snack_data, styles=styles)
 
 @app.route('/snacks/<id>/edit', methods=['GET', 'POST'])
 def snack_edit(id):
@@ -54,6 +56,16 @@ def snack_edit(id):
         db_utils.edit_snack(id, new_data.get_data())
         status = {'message': 'OK', 'action': 'Add snack', 'code': 200}
         return render_template('action_feedback.html', status=status)
+
+def create_styles(image_url):
+    env = Environment(loader=FileSystemLoader('templates'))
+    template = env.get_template('default.css')
+    values = {
+        "background_image_url": url_for('static', filename='images/' + image_url) ,
+        "background_size": "cover"
+    }
+    return template.render(values=values)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port, debug=True)
