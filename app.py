@@ -57,6 +57,10 @@ def snack_edit(id):
         status = {'message': 'OK', 'action': 'Add snack', 'code': 200}
         return render_template('action_feedback.html', status=status)
 
+@app.route('/sales/add')
+def add_sales():
+    return render_template('add_sales.html')
+
 def create_styles(image_url):
     env = Environment(loader=FileSystemLoader('templates'))
     template = env.get_template('default.css')
