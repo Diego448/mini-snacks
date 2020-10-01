@@ -1,4 +1,4 @@
 #snack_banner{ 
     background-image:url("{{ values['background_image_url'] }}"); 
-    background-size: {{ values['background_size'] }};
+    background-size:url("{{ values['background_size'] }}");
 }
