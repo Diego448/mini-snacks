@@ -81,6 +81,5 @@ def style_test(image):
     stylesheet = template.render(values=values)
     return Response(stylesheet, mimetype="text/css")
 
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port, debug=True)
