@@ -57,6 +57,10 @@ def snack_edit(id):
         status = {'message': 'OK', 'action': 'Add snack', 'code': 200}
         return render_template('action_feedback.html', status=status)
 
+@app.route('/sales/all')
+def sales():
+    return render_template('sales.html')
+
 @app.route('/sales/add')
 def add_sales():
     return render_template('add_sales.html')
