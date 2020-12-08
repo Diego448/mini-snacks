@@ -9,6 +9,9 @@ es_MX = {
         "card_2": {
             "title": "Inventario"
         },
+        "card_3": {
+            "title": "Ventas"
+        },
         "footer": {
             "phone_label": "Teléfono",
             "schedule": "Abierto de 5:00pm a 9:00pm"
