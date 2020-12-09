@@ -21,7 +21,7 @@
         <div class="card text-center">
             <img src="{{ url_for('static', filename='images/inventory_card.jpg') }}" class="card-img-top"/>
             <div class="card-body">
-                <h5 class="h5">Inventory</h5>
+                <h5 class="h5">{{ content['card_2]['title'] }}</h5>
                 <p class="card-text">Products stock listing</p>
                 <a href="{{ url_for('snacks_list') }}" class="btn btn-primary">Inventory</a>
             </div>
