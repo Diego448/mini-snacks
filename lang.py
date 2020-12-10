@@ -7,10 +7,14 @@ es_MX = {
             "description": "Conoce nuestras botanas"
         },
         "card_2": {
-            "title": "Inventario"
+            "button": "Inventario",
+            "title": "Inventario",
+            "description": "Existencias de productos"
         },
         "card_3": {
-            "title": "Ventas"
+            "button": "Ventas",
+            "title": "Ventas",
+            "description": "Nuestras ventas"
         },
         "footer": {
             "phone_label": "Teléfono",
