@@ -59,7 +59,7 @@ def snack_edit(id):
 
 @app.route('/sales/all')
 def sales():
-    return render_template('sales.html', content=current_lang['sales'])
+    return render_template('sales.html')
 
 @app.route('/sales/add')
 def add_sales():
